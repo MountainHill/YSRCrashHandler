@@ -1,7 +1,8 @@
-##YSRCrashHandler是什么?
-一个捕获程序异常的工具类
+###YSRCrashHandler是什么?
 
-##YSRCrashHandler使用方法
+一个捕获程序异常的工具类，目前支持存储文件，发送邮件。在YSRUncaughtExceptionHandler.h中更改相应宏变量的值设置处理方式。
+
+###YSRCrashHandler使用方法
 
 ```
 #import "YSRUncaughtExceptionHandler"
@@ -12,17 +13,30 @@
 }
 ```
 
-##YSRCrashHandler常用设置
+###YSRCrashHandler常用设置
 
-* 设置YSRUncaughtExceptionHandler.h文件中宏变量CustomYSRCrashCatchStyle,可定义变量为YSRStyleWriteToFile,YSRStyleSendToEmail,或者(YSRStyleWriteToFile | YSRStyleSendToEmail),当前默认方式为(YSRStyleWriteToFile | YSRStyleSendToEmail)。目前仅支持纪录至Exception.txt文件和发送至邮箱。如需查看Exception.txt,需要设置工程Info.plist文件中添加row,key为“Application supports iTunes file sharing”，value为"YES".如果是真机调试可将机器连接itune查看程序文件，如果是模拟器调试，可至相应目录查找。
-* 如果宏变量CustomYSRCrashCatchStyle中包含YSRStyleSendToEmail,可设置宏变量CustomYSREmail为自己的邮箱地址。如果宏变量CustomYSRCrashCatchStyle中不包含YSRStyleSendToEmail,可设置宏变量CustomYSREmail为@""。
+* 设置宏变量`CustomYSRCrashCatchStyle`
+    * <span style="font-size:115%;color:#A52A2A">YSRStyleWriteToFile</span>
+    * <span style="font-size:115%;color:#A52A2A">YSRStyleSendToEmail</span>
+    * <span style="font-size:115%;color:#A52A2A">YSRStyleWriteToFile | YSRStyleSendToEmail</span>
 
-##有问题反馈
+
+* 查看Exception.txt,需要在工程Info.plist文件中添加row
+    * <span style="font-size:115%;color:#A52A2A">key:Application supports iTunes file sharing</span>
+    * <span style="font-size:115%;color:#A52A2A">value:YES</span>
+
+
+* 设置宏变量`CustomYSREmail`
+    * <span style="font-size:115%;color:#A52A2A">邮箱地址</span>
+    * <span style="font-size:115%;color:#A52A2A">@" "</span>
+
+###有问题反馈
+
 在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流
 
-* 邮件(630964507#qq.com, 把#换成@)
+* 邮件(630964507@qq.com)
 * QQ: 630964507
 
 ##感激
 
-* MaHua(http://mahua.jser.me) 
+* [MaHua](http://mahua.jser.me) 
